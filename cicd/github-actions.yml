@@ -1,0 +1,25 @@
+# cicd/github-actions.yml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Build Docker Image
+      run: docker build -t sample-app:${{ github.sha }} .
+
+    - name: Push Image
+      run: docker push sample-app:${{ github.sha }}
+
+    - name: Deploy via Helm
+      run: |
+        helm upgrade --install sample-app ./helm/sample-app \
+        --set image.tag=${{ github.sha }}
