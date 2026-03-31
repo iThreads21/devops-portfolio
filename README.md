@@ -41,6 +41,15 @@ Operational documentation:
 - Scalable and maintainable infrastructure
 - Focus on reliability, performance, and security
 
+## 🧠 Advanced Capabilities
+- Infrastructure as Code (Terraform – GCP)
+- GitOps deployment using ArgoCD
+- Kubernetes multi-environment architecture
+- CI/CD automation (Jenkins & GitHub Actions)
+- Observability (Prometheus + Grafana)
+- Secure containerized deployment (Docker + Helm)
+- Incident response and runbook documentation
+
 ## 📫 Contact
 - Name: Tarwan
 - Role: DevOps Engineer
