@@ -1,0 +1,16 @@
+# gitops/argocd-app.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  source:
+    repoURL: https://github.com/username/devops-portfolio
+    path: helm/sample-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
